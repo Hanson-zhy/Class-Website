@@ -1,3 +1,4 @@
+rm -rf index*
 cp /sd/Website/Class/* .
 git add .
 git commit -m "update"
