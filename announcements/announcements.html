@@ -1,0 +1,423 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="https://cdn.wegic.ai/assets/onepage/thread/icon/1725464653505.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>公告栏 - 星澜</title>
+  <meta name="description" content="网站包含首页、公告栏、起梦园、同学簿几个页面，还有一个登录按钮。首页左侧三分之一为欢迎语：欢迎来到星澜!，右侧三分之二为班级图集，图集以堆叠形式展示图片，提供手动切换按钮。首页下方有班级相关链接、QQ群和站长联系方式。公告栏和起梦园是独立页面，公告栏页面只有特定用户才能发布和修改公告，起梦园页面提供创建相册和上传图片功能，支持评论。访客和用户功能有所区分。同学簿页面展示学生姓名和头像，点击信息卡可查看详情，包括头像、姓名、个人签名和班级职务。个人签名限100个字符，班级职务由特定用户更改，职务标注颜色分类明确。">
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://cdn.wegic.ai/assets/onepage/thread/thumbnail/1831342491034918914/1725531320939.png" />
+  <!-- og facebook -->
+  <meta property="og:url" content="https://wegic.app" />
+  <meta property="og:title" content="星澜 - made with Wegic" />
+  <meta property="og:description" content="网站包含首页、公告栏、起梦园、同学簿几个页面，还有一个登录按钮。首页左侧三分之一为欢迎语：欢迎来到星澜!，右侧三分之二为班级图集，图集以堆叠形式展示图片，提供手动切换按钮。首页下方有班级相关链接、QQ群和站长联系方式。公告栏和起梦园是独立页面，公告栏页面只有特定用户才能发布和修改公告，起梦园页面提供创建相册和上传图片功能，支持评论。访客和用户功能有所区分。同学簿页面展示学生姓名和头像，点击信息卡可查看详情，包括头像、姓名、个人签名和班级职务。个人签名限100个字符，班级职务由特定用户更改，职务标注颜色分类明确。" />
+  <meta property="og:image" content="https://cdn.wegic.ai/assets/onepage/thread/thumbnail/1831342491034918914/1725531320939.png" />
+  
+  <style>
+    .wegic-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 12px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 6px rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0px;
+      color: rgba(36, 36, 36, 1);
+      transition: all 0.3s;
+      font-family: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      z-index: 9999;
+    }
+
+    .wegic-badge:hover {
+      background: rgba(245, 245, 245, 1);
+    }
+
+    .wegic-badge:active {
+      background: rgba(242, 242, 242, 1);
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+    }
+
+    .wegic-badge img {
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+    }
+
+    #root {
+      height: 100vh;
+    }
+  </style>
+  <script type="module" crossorigin src="/static/js/chunk-index-B5rgZSOf.js"></script>
+  <link rel="stylesheet" crossorigin href="/static/css/index-Cl_cRGTq.css">
+</head>
+
+<body>
+  <div id="root">
+    <div style="opacity: 0;">
+      <div class="_block-container_1jg5m_44 !top-0 !fixed !z-40" id="block-container" data-id="IOB3xPvsmjr57hyjGEY-h" data-type="navigation" style="width: 100%;"><section class="fixed rounded-[200px] outline-1 outline-black/5 left-8 right-8 top-5 z-40 md:rounded-[0px] md:top-0 md:left-0  md:border md:border-black/5 md:right-0 bg-white backdrop-blur-xl dark:bg-black/80 md:px-8 md:pr-5 md:transition-all md:duration-500 "><div class="w-full mx-auto max-w-7xl h-full hidden gap-5 md:flex md:items-center" style="padding-top: 12px; padding-bottom: 12px;"><div class="w-full h-full flex items-center justify-start"><div class="!w-auto object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative; border-radius: inherit;"><img alt="logo" class="!w-auto object-cover _editable-img_xd76s_47" style="height: 40px;"></div></div><div class="w-full h-full flex items-center justify-center text-sm leading-[17px]"><nav class=" w-full h-full flex items-center justify-center text-[14px]"><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=index&amp;target=_blank&amp;text=%E9%A6%96%E9%A1%B5" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">首页</div></span></button><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=announcements&amp;target=_blank&amp;text=%E5%85%AC%E5%91%8A%E6%A0%8F" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">公告栏</div></span></button><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=dreamland&amp;target=_blank&amp;text=%E8%B5%B7%E6%A2%A6%E5%9B%AD" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">起梦园</div></span></button></nav></div><div class=" w-full h-full flex items-center justify-end overflow-hidden gap-3"><button data-element-type="button" class="BTN-PRIMARY w-fit px-[20px] group text-[14px] whitespace-nowrap font-normal text-black flex gap-2 items-center rounded-full bg-white/0 border border-black hover:bg-[#FCEFE3] hover:transition-all hover:duration-300 _button-wrap_zzc5c_44" style="height: 40px;"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%99%BB%E5%BD%95" class="editable-text _editable_1fy6y_44">登录</div></span><span><div data-element-type="icon" class="text-sm text-black group-hover:translate-x-1 transition-all _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></div></span></button></div></div><div class="relative z-40 w-full h-full flex items-center md:hidden" style="padding-top: 12px; padding-bottom: 12px;"><div class="!w-auto px-6 object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative; border-radius: inherit;"><img alt="logo" class="!w-auto px-6 object-cover _editable-img_xd76s_47" style="height: 40px;"></div><button class=" absolute right-6" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 fill-black dark:fill-white"><path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"></path></svg></button></div></section></div><div class="_block-container_1jg5m_44" id="block-container" data-id="0fo9UIsCf_yg5sEjA3Fop" data-type="block" style="width: 100%;"><div class="bg-white py-16 sm:py-20 dark:bg-slate-800"><div class="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-12 px-6 sm:gap-y-16 lg:grid-cols-2 lg:px-8"><article class="mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-lg"><time datetime="2024-09-04T23:43:34+08:00" class="block text-sm leading-6 text-gray-600 dark:text-slate-400"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=2024-09-04" class="editable-text _editable_1fy6y_44">2024-09-04</div></span></time><div><h2 id="featured-post" class="TITLE-PRIMARY mt-4 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl dark:text-slate-50"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%9C%80%E6%96%B0%E5%85%AC%E5%91%8A%EF%BC%9A%E7%8F%AD%E7%BA%A7%E6%B4%BB%E5%8A%A8%E5%AE%89%E6%8E%92" class="editable-text _editable_1fy6y_44">最新公告：班级活动安排</div></span></h2><p class="DESC mt-4 text-lg leading-8 text-gray-600 dark:text-slate-300"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%9F%A5%E7%9C%8B%E6%88%91%E4%BB%AC%E6%9C%80%E6%96%B0%E7%9A%84%E7%8F%AD%E7%BA%A7%E6%B4%BB%E5%8A%A8%E5%AE%89%E6%8E%92%EF%BC%8C%E5%8F%82%E4%B8%8E%E5%85%B6%E4%B8%AD%EF%BC%8C%E4%B8%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E5%85%B1%E5%90%8C%E6%88%90%E9%95%BF%E3%80%82" class="editable-text _editable_1fy6y_44">查看我们最新的班级活动安排，参与其中，与同学们共同成长。</div></span></p></div><div class="mt-4 flex flex-col justify-between gap-6 sm:mt-8 sm:flex-row-reverse sm:gap-8 lg:mt-4 lg:flex-col"><div class="flex"><button aria-describedby="featured-post" data-element-type="button" class="TEXT-LINK flex items-center gap-1 group text-sm font-semibold leading-6 text-sky-600 hover:text-sky-700 dark:text-slate-200 dark:hover:text-white _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=%23&amp;target=_blank&amp;text=%E6%9F%A5%E7%9C%8B%E6%9B%B4%E5%A4%9A" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">查看更多</div></span><span><div data-element-type="icon" class="group-hover:translate-x-1 transition-all duration-300 _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></div></span></button></div><div class="flex lg:border-t lg:border-black/10 dark:border-white/10 lg:pt-8"><div class="flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200"><div class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="班主任" class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _editable-img_xd76s_47"></div><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%8F%AD%E4%B8%BB%E4%BB%BB" class="editable-text _editable_1fy6y_44">班主任</div></span></div></div></div></article><div class="mx-auto w-full max-w-2xl border-t border-black/10 dark:border-white/10 pt-12 sm:pt-16 lg:mx-0 lg:max-w-none lg:border-t-0 lg:pt-0"><div class="-my-12 divide-y divide-black/10 dark:divide-white/10"><div class="py-12"><div class="group relative max-w-xl"><time datetime="2024-09-01" class="block text-sm leading-6 text-gray-600 dark:text-slate-400"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=2024-09-01" class="editable-text _editable_1fy6y_44">2024-09-01</div></span></time><div><h2 class="TITLE-SECONDARY mt-2 text-lg font-semibold text-gray-900 dark:text-slate-200 group-hover:text-gray-600 dark:group-hover:text-slate-400"><button data-element-type="button" class="relative _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%96%B0%E7%94%9F%E6%AC%A2%E8%BF%8E%E4%BC%9A" class="editable-text _editable_1fy6y_44">新生欢迎会</div></span></button></h2><p class="DESC mt-4 text-sm leading-6 text-gray-600 dark:text-slate-300"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%AC%A2%E8%BF%8E%E6%96%B0%E5%90%8C%E5%AD%A6%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC%E7%9A%84%E5%A4%A7%E5%AE%B6%E5%BA%AD%EF%BC%8C%E4%BA%86%E8%A7%A3%E7%8F%AD%E7%BA%A7%E8%A7%84%E7%AB%A0%E5%88%B6%E5%BA%A6%E5%92%8C%E6%B4%BB%E5%8A%A8%E5%AE%89%E6%8E%92%E3%80%82" class="editable-text _editable_1fy6y_44">欢迎新同学加入我们的大家庭，了解班级规章制度和活动安排。</div></span></p></div></div><div class="mt-4 flex"><button data-element-type="button" class="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200 _button-wrap_zzc5c_44"><div class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="学生会" class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _editable-img_xd76s_47"></div><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E5%AD%A6%E7%94%9F%E4%BC%9A" class="editable-text _editable_1fy6y_44">学生会</div></span></button></div></div><div class="py-12"><div class="group relative max-w-xl"><time datetime="2024-10-15" class="block text-sm leading-6 text-gray-600 dark:text-slate-400"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=2024-10-15" class="editable-text _editable_1fy6y_44">2024-10-15</div></span></time><div><h2 class="TITLE-SECONDARY mt-2 text-lg font-semibold text-gray-900 dark:text-slate-200 group-hover:text-gray-600 dark:group-hover:text-slate-400"><button data-element-type="button" class="relative _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95%E5%AE%89%E6%8E%92" class="editable-text _editable_1fy6y_44">期中考试安排</div></span></button></h2><p class="DESC mt-4 text-sm leading-6 text-gray-600 dark:text-slate-300"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%9F%A5%E7%9C%8B%E6%9C%9F%E4%B8%AD%E8%80%83%E8%AF%95%E7%9A%84%E5%85%B7%E4%BD%93%E5%AE%89%E6%8E%92%EF%BC%8C%E5%81%9A%E5%A5%BD%E5%85%85%E5%88%86%E5%87%86%E5%A4%87%E3%80%82" class="editable-text _editable_1fy6y_44">查看期中考试的具体安排，做好充分准备。</div></span></p></div></div><div class="mt-4 flex"><button data-element-type="button" class="relative flex gap-x-2.5 text-sm font-semibold leading-6 text-gray-900 dark:text-slate-200 _button-wrap_zzc5c_44"><div class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="教务处" class="IMAGE h-6 w-6 flex-none rounded-full bg-slate-100 object-cover _editable-img_xd76s_47"></div><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%95%99%E5%8A%A1%E5%A4%84" class="editable-text _editable_1fy6y_44">教务处</div></span></button></div></div></div></div></div></div><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="cyR5U8ccJsDCkkueVhleG" data-type="footer" style="width: 100%;"><section class="bg-slate-50 dark:bg-slate-800 px-6 py-20 md:px-8"><div><div class=" mx-auto max-w-7xl flex flex-col gap-20"><div class="flex flex-col items-center gap-8 md:justify-between md:flex-row"><ul class="flex items-center gap-8"><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=index&amp;target=_blank&amp;text=%E9%A6%96%E9%A1%B5" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">首页</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=announcements&amp;target=_blank&amp;text=%E5%85%AC%E5%91%8A%E6%A0%8F" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">公告栏</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=dreamland&amp;target=_blank&amp;text=%E8%B5%B7%E6%A2%A6%E5%9B%AD" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">起梦园</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=" class="editable-text _editable_1fy6y_44"></div></span></button></li></ul><ul class="flex items-center gap-8 "><li href="https://qq.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="qq" class="svg-inline--fa fa-qq " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"></path></svg></div></span></button></li><li href="https://wechat.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"></div></span></button></li><li href="https://weibo.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="weibo" class="svg-inline--fa fa-weibo " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"></path></svg></div></span></button></li><li href="https://github.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></div></span></button></li></ul></div><p class="w-full text-sm text-center text-slate-600 lg:mt-0 dark:text-slate-400"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%C2%A9%20%E6%98%9F%E6%BE%9C%202023%EF%BC%8C%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" class="editable-text _editable_1fy6y_44">© 星澜 2023，版权所有</div></span></p></div></div></section></div>
+    </div>
+  </div>
+
+
+  <script src="/static/js/fontawesom@6.5.1.js" async></script>
+
+  <script src="/static/js/tailwindcss@3.3.5.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          textColor: {
+            slate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            gray: {
+              50: '#f9fafb',
+              100: '#f3f4f6',
+              200: '#e5e7eb',
+              300: '#d1d5db',
+              400: '#9ca3af',
+              500: '#6b7280',
+              600: '#4b5563',
+              700: '#374151',
+              800: '#1f2937',
+              900: '#111827',
+              950: '#030712',
+            },
+          },
+          colors: {
+            inherit: 'inherit',
+            current: 'currentColor',
+            transparent: 'transparent',
+            black: '#000',
+            white: '#fff',
+            slate: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            gray: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            zinc: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            neutral: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            stone: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            red: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            orange: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            amber: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            yellow: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            lime: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            green: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            emerald: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            teal: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            cyan: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            sky: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            blue: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            indigo: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            violet: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            purple: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            fuchsia: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            pink: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            rose: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <script type="module" src="https://js-design-aibuild.s3.us-west-2.amazonaws.com/assets/onepage/thread/js/1831357362574462978/1725465141925.js?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGFE0YZjRAEZqaRhVEguSaDMJRtaFspwvDfG4tKZ0cbNAiEAkEUSaVYhqH5p23p4Ldz5wF5rxKyB37IpacwfaMeHiCEqxAUI8P%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw5NDc1NTkwMjk0NDYiDMQEm1rSiKRxTFFGgSqYBVz%2FAQM%2B%2BlUIU7whj8duur2d4WET2Gcs3WBc4FpYfOhl3DfmDHHmTQDmaWBOJ%2FhpNwwEHZEXcYjzrv7KpWCwjixatZdA1Is9DmGUG8Wbq7hpQ0N4yiJXknW8Y0uPiOJA0FHgNfrE3hR8KI7bovqTZ81nOR86ghaFzGKtM4ftu8ZqUGK6e8W%2B%2BRohXT0%2FvsrLbnnJ1xEBDi3ceXaO4fOnMRPfzFN2Lm6LQAhS%2FJXUmiRMF5Q6QW9Oz9XFY%2FFwQeBLY0dL7OA%2BqL%2FJkkVr0ZBxFTmf%2F4Lo4tM7kgZ65OlU7wh5ZXlFY3k9LVlX6VHZZsVJMts3LkwPiderM%2F1cN1djtACgQ77EDAyJ45g70Gaa5pnEzKt3h%2BrRc%2Fw1Vbd14mmavaQKiikd1v2Ne5VJnAmpqJa4%2FpteL01lMLOtz0fdHABQLmk5CWmO8njoBWEjdilBN5wZOozFEJgnVM9L3riVDNUc8nSllIJKeG0V173r0xwntnan9QaymKLKeGZee1yynpaAlohraWZD8gkOprbuZ%2BhBPF9KkbMRD2miFCeNrkUYw%2Bb0h1ONmgLKDpQYSM8dk1Z4770%2B%2B2DTrcourvA%2Bf83OmDlixutWLkXNYamNp9kcLe%2BKjUi%2BpSc9biQDNL5WwvyRlDxyVfcI7naxrqMGQMehEspAw8e18mBsyN8NRpTvc8OZcdlyRV57GxR61S32zGGYr05l7njKLzc0ePH4Ny5RqGISskEojyqU8qwGJZaju7hlly30RY0Dt6NR6%2FqYolyRgNNyZ1jxW7vQVnqRhEOQPcE90m90oV9czSUYHIP55tHI8Rii%2FNGtCK1ZbSTyLMJ5JOrS%2F%2BqrwEQD%2B%2F60CYf8QDSV2tZUKgeyezsbE5y3MKfoEq%2FQFSowwIPntgY6sQE1l0LeeBXlxdUPbMblOh5dSkYh4dmi%2BJLXyuvaIlSpDp9iWfGAU6ql5B1G9esyyg3PonYN%2FR7ApUiAHiQyBmxcS2%2F2ePjvHLfKOE%2FzpvPmGH7ZxBDEjHZwa2ki03CK0nEsun6528%2B3G8TRt3i%2Be83%2FwvhzIEySvCpQWBx8iJ0ozkJsJOgNTV7e2o1qi6lm6Ifejb%2FaeA0Mg4w8S6bmytRQNrDrS8jm4kC7G3uiLTrr%2Btw%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240905T150713Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA5ZHXLLLDEEQAFP7V%2F20240905%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=33a7e093437ea167cd39f6bd91f33e25339f369d149fc378b2e8bb19cc5f9454"></script>
+
+
+  <!-- badge start-->
+  <a class="wegic-badge" id="wegic-badge" href="https://wegic.ai/?source=bandage" target="_blank">
+    <img src="/static/logo.svg" />
+    Made in Wegic
+  </a>
+  <!-- badge end-->
+
+  <!-- Google tag start -->
+  
+  <!-- Google tag end -->
+
+  
+</body>
+
+</html>
