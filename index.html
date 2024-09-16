@@ -1,942 +1,423 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>星澜</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta charset="UTF-8" />
+  <link rel="icon" href="https://cdn.wegic.ai/assets/onepage/thread/icon/1725464653505.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>首页 - 星澜</title>
+  <meta name="description" content="网站包含首页、公告栏、起梦园、同学簿几个页面，还有一个登录按钮。首页左侧三分之一为欢迎语：欢迎来到星澜!，右侧三分之二为班级图集，图集以堆叠形式展示图片，提供手动切换按钮。首页下方有班级相关链接、QQ群和站长联系方式。公告栏和起梦园是独立页面，公告栏页面只有特定用户才能发布和修改公告，起梦园页面提供创建相册和上传图片功能，支持评论。访客和用户功能有所区分。同学簿页面展示学生姓名和头像，点击信息卡可查看详情，包括头像、姓名、个人签名和班级职务。个人签名限100个字符，班级职务由特定用户更改，职务标注颜色分类明确。">
+  <!-- twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://cdn.wegic.ai/assets/onepage/thread/thumbnail/1831342491034918914/1725531320939.png" />
+  <!-- og facebook -->
+  <meta property="og:url" content="https://wegic.app" />
+  <meta property="og:title" content="星澜 - made with Wegic" />
+  <meta property="og:description" content="网站包含首页、公告栏、起梦园、同学簿几个页面，还有一个登录按钮。首页左侧三分之一为欢迎语：欢迎来到星澜!，右侧三分之二为班级图集，图集以堆叠形式展示图片，提供手动切换按钮。首页下方有班级相关链接、QQ群和站长联系方式。公告栏和起梦园是独立页面，公告栏页面只有特定用户才能发布和修改公告，起梦园页面提供创建相册和上传图片功能，支持评论。访客和用户功能有所区分。同学簿页面展示学生姓名和头像，点击信息卡可查看详情，包括头像、姓名、个人签名和班级职务。个人签名限100个字符，班级职务由特定用户更改，职务标注颜色分类明确。" />
+  <meta property="og:image" content="https://cdn.wegic.ai/assets/onepage/thread/thumbnail/1831342491034918914/1725531320939.png" />
+  
+  <style>
+    .wegic-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      border-radius: 12px;
+      padding: 8px 14px;
+      background: rgba(255, 255, 255, 1);
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05), 0px 4px 6px rgba(0, 0, 0, 0.06);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0px;
+      color: rgba(36, 36, 36, 1);
+      transition: all 0.3s;
+      font-family: ui-sans-serif, system-ui, -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Helvetica Neue", arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+      z-index: 9999;
+    }
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    .wegic-badge:hover {
+      background: rgba(245, 245, 245, 1);
+    }
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    .wegic-badge:active {
+      background: rgba(242, 242, 242, 1);
+      box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.05);
+    }
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    .wegic-badge img {
+      width: 20px;
+      height: 20px;
+      pointer-events: none;
+    }
 
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
+    #root {
+      height: 100vh;
+    }
+  </style>
+  <script type="module" crossorigin src="/static/js/chunk-index-B5rgZSOf.js"></script>
+  <link rel="stylesheet" crossorigin href="/static/css/index-Cl_cRGTq.css">
 </head>
 
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center fixed-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        <img src="assets/img/logo.png" alt="">
-        <h1 class="sitename">QuickStart</h1>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero" class="">主页</a></li>
-          <li><a href="index.html#about">关于</a></li>
-          <li><a href="index.html#features">特点</a></li>
-          <li><a href="index.html#services">服务</a></li>
-          <li><a href="index.html#pricing">定价</a></li>
-          <li class="dropdown"><a href="#"><span>下拉栏</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-            <ul>
-              <li><a href="#">下拉栏1</a></li>
-              <li class="dropdown"><a href="#"><span>二层菜单</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                <ul>
-                  <li><a href="#">下拉栏1</a></li>
-                  <li><a href="#">下拉栏2</a></li>
-                  <li><a href="#">下拉栏3</a></li>
-                  <li><a href="#">下拉栏4</a></li>
-                  <li><a href="#">下拉栏5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">3</a></li>
-              <li><a href="#">4</a></li>
-              <li><a href="#">5</a></li>
-            </ul>
-          </li>
-          <li><a href="index.html#contact">联系方式</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
-
-      <a class="btn-getstarted" href="index.html#about">注册/登录</a>
-
+<body>
+  <div id="root">
+    <div style="opacity: 0;">
+      <div class="_block-container_1jg5m_44" id="block-container" data-id="IOB3xPvsmjr57hyjGEY-h" data-type="navigation" style="width: 100%;"><section class="fixed rounded-[200px] outline-1 outline-black/5 left-8 right-8 top-5 z-40 md:rounded-[0px] md:top-0 md:left-0  md:border md:border-black/5 md:right-0 bg-white backdrop-blur-xl dark:bg-black/80 md:px-8 md:pr-5 md:transition-all md:duration-500 "><div class="w-full mx-auto max-w-7xl h-full hidden gap-5 md:flex md:items-center" style="padding-top: 12px; padding-bottom: 12px;"><div class="w-full h-full flex items-center justify-start"><div class="!w-auto object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative; border-radius: inherit;"><img alt="logo" class="!w-auto object-cover _editable-img_xd76s_47" style="height: 40px;"></div></div><div class="w-full h-full flex items-center justify-center text-sm leading-[17px]"><nav class=" w-full h-full flex items-center justify-center text-[14px]"><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=index&amp;target=_blank&amp;text=%E9%A6%96%E9%A1%B5" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">首页</div></span></button><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=announcements&amp;target=_blank&amp;text=%E5%85%AC%E5%91%8A%E6%A0%8F" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">公告栏</div></span></button><button data-element-type="button" class="pr-12 py-3 text-black whitespace-nowrap cursor-pointer hover:text-black/60 hover:transition-all duration-100 dark:text-white dark:hover:text-white/60 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=dreamland&amp;target=_blank&amp;text=%E8%B5%B7%E6%A2%A6%E5%9B%AD" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">起梦园</div></span></button></nav></div><div class=" w-full h-full flex items-center justify-end overflow-hidden gap-3"><button data-element-type="button" class="BTN-PRIMARY w-fit px-[20px] group text-[14px] whitespace-nowrap font-normal text-black flex gap-2 items-center rounded-full bg-white/0 border border-black hover:bg-[#FCEFE3] hover:transition-all hover:duration-300 _button-wrap_zzc5c_44" style="height: 40px;"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%99%BB%E5%BD%95" class="editable-text _editable_1fy6y_44">登录</div></span><span><div data-element-type="icon" class="text-sm text-black group-hover:translate-x-1 transition-all _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></div></span></button></div></div><div class="relative z-40 w-full h-full flex items-center md:hidden" style="padding-top: 12px; padding-bottom: 12px;"><div class="!w-auto px-6 object-cover _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative; border-radius: inherit;"><img alt="logo" class="!w-auto px-6 object-cover _editable-img_xd76s_47" style="height: 40px;"></div><button class=" absolute right-6" tabindex="0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8 fill-black dark:fill-white"><path fill-rule="evenodd" d="M3 6.75A.75.75 0 0 1 3.75 6h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 6.75ZM3 12a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 12Zm0 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clip-rule="evenodd"></path></svg></button></div></section></div><div class="_block-container_1jg5m_44" id="block-container" data-id="xNlKne3XruKmhnTxtO_I2" data-type="block" style="width: 100%;"><section class="relative px-6 py-24 md:px-8 md:py-32"><div><div class="w-full max-w-7xl mx-auto grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:gap-24"><div class="w-full flex flex-col gap-16 md:gap-20"><div class="w-full flex flex-col gap-6"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E6%98%9F%E6%BE%9C%21" class="editable-text _editable_1fy6y_44 TITLE-PRIMARY text-6xl font-bold text-slate-900 dark:text-slate-50">欢迎来到星澜!</div></span><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E8%BF%99%E9%87%8C%E6%98%AF%E6%88%91%E4%BB%AC%E5%85%B1%E5%90%8C%E7%9A%84%E5%9B%9E%E5%BF%86%E5%92%8C%E6%A2%A6%E6%83%B3%E5%BC%80%E5%A7%8B%E7%9A%84%E5%9C%B0%E6%96%B9%E3%80%82" class="editable-text _editable_1fy6y_44 DESC text-slate-600 dark:text-slate-400">这里是我们共同的回忆和梦想开始的地方。</div></span></div><div class="flex flex-col gap-10"><div class="w-full flex items-center gap-6"><button data-element-type="button" class="BTN-PRIMARY w-fit text-white whitespace-nowrap px-4 py-3 rounded-full bg-sky-500 hover:bg-sky-600 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=%2Fannouncements&amp;target=_blank&amp;text=%E8%BF%9B%E5%85%A5%E5%85%AC%E5%91%8A%E6%A0%8F" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">进入公告栏</div></span></button><button data-element-type="button" class="BTN-SECONDARY w-fit flex items-center gap-1 group text-slate-900 dark:text-slate-50 whitespace-nowrap px-4 py-3 hover:text-sky-500 dark:hover:text-sky-600 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=%2Flogin&amp;target=_blank&amp;text=%E7%99%BB%E5%BD%95" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">登录</div></span><span><div data-element-type="icon" class="group-hover:translate-x-1 transition-all duration-300 _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-right" class="svg-inline--fa fa-arrow-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"></path></svg></div></span></button></div></div></div><div class="IMAGE w-full h-auto aspect-[4/3] md:aspect-[1/1] object-cover rounded-[2rem] rounded-tl-[100px] rounded-br-[100px] _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img class="IMAGE w-full h-auto aspect-[4/3] md:aspect-[1/1] object-cover rounded-[2rem] rounded-tl-[100px] rounded-br-[100px] _editable-img_xd76s_47"></div></div><div class="absolute inset-0 rounded-bl-[100px] bg-slate-50 dark:bg-slate-900 pointer-events-none -z-10"></div></div></section><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="UaMmlFTeY4HeYkabu8IQx" data-type="block" style="width: 100%;"><div class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8"><div class="IMAGE absolute inset-0 -z-10 opacity-20 h-full w-full object-cover rounded-lg bg-slate-100 _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent;"><img alt="https://cdn.wegic.ai/assets/onepage/ai/image/d9a50ce5-cdf6-47a2-8171-4b0c1cb1189a.jpeg" class="IMAGE absolute inset-0 -z-10 opacity-20 h-full w-full object-cover rounded-lg bg-slate-100 _editable-img_xd76s_47"></div><div class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl" aria-hidden="true"><div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);"></div></div><div class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu" aria-hidden="true"><div class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%);"></div></div><div class="mx-auto max-w-2xl text-center"><h2 class="TITLE-PRIMARY text-4xl font-bold tracking-tight text-white sm:text-6xl"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%98%9F%E6%BE%9C" class="editable-text _editable_1fy6y_44">星澜</div></span></h2><p class="DESC mt-6 text-lg leading-8 text-white/70"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E4%B8%80%E4%B8%AA%E8%AE%B0%E5%BD%95%E6%88%91%E4%BB%AC%E7%BE%8E%E5%A5%BD%E5%9B%9E%E5%BF%86%E5%92%8C%E6%A2%A6%E6%83%B3%E7%9A%84%E5%B9%B3%E5%8F%B0%E3%80%82" class="editable-text _editable_1fy6y_44">一个记录我们美好回忆和梦想的平台。</div></span></p></div></div><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="JiABdsiTCuC8hjikfHQKv" data-type="block" style="width: 100%;"><div class="w-full dark:bg-slate-800"><div class="max-w-7xl w-full mx-auto py-20 px-4"><div class="relative"><div class="absolute bottom-0 left-0 right-0 z-10 mx-auto mb-4 flex list-none justify-center p-0"><button type="button" aria-label="Slide 1" data-element-type="button" class="mx-1 h-1 rounded w-10 flex-initial cursor-pointer border-0 bg-black/10 dark:bg-white/10 p-0 transition-opacity duration-500 ease-in-out opacity-100 _button-wrap_zzc5c_44"></button><button type="button" aria-label="Slide 2" data-element-type="button" class="mx-1 h-1 rounded w-10 flex-initial cursor-pointer border-0 bg-black/10 dark:bg-white/10 p-0 transition-opacity duration-500 ease-in-out opacity-40 _button-wrap_zzc5c_44"></button><button type="button" aria-label="Slide 3" data-element-type="button" class="mx-1 h-1 rounded w-10 flex-initial cursor-pointer border-0 bg-black/10 dark:bg-white/10 p-0 transition-opacity duration-500 ease-in-out opacity-40 _button-wrap_zzc5c_44"></button></div><div class="relative w-full overflow-hidden"><div><div class="float-left w-full transition-transform duration-500 ease-in-out block"><div class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="" class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _editable-img_xd76s_47"></div><div class="absolute px-6 inset-x-0 bottom-5 hidden py-5 text-center text-white/90 md:block"><h1 class="TITLE-PRIMARY text-4xl font-bold mb-3"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%8F%AD%E7%BA%A7%E6%B4%BB%E5%8A%A8" class="editable-text _editable_1fy6y_44">班级活动</div></span></h1><p class="DESC"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E8%AE%B0%E5%BD%95%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E5%BA%A6%E8%BF%87%E7%9A%84%E7%BE%8E%E5%A5%BD%E6%97%B6%E5%85%89%E3%80%82" class="editable-text _editable_1fy6y_44">记录我们一起度过的美好时光。</div></span></p></div></div></div><div><div class="float-left w-full transition-transform duration-500 ease-in-out hidden"><div class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="" class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _editable-img_xd76s_47"></div><div class="absolute px-6 inset-x-0 bottom-5 hidden py-5 text-center text-white/90 md:block"><h1 class="TITLE-PRIMARY text-4xl font-bold mb-3"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB" class="editable-text _editable_1fy6y_44">校园生活</div></span></h1><p class="DESC"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E5%B1%95%E7%A4%BA%E6%88%91%E4%BB%AC%E4%B8%B0%E5%AF%8C%E5%A4%9A%E5%BD%A9%E7%9A%84%E6%A0%A1%E5%9B%AD%E7%94%9F%E6%B4%BB%E3%80%82" class="editable-text _editable_1fy6y_44">展示我们丰富多彩的校园生活。</div></span></p></div></div></div><div><div class="float-left w-full transition-transform duration-500 ease-in-out hidden"><div class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _wrap_xd76s_44" data-element-type="image" style="transform: none; opacity: 1; object-fit: none; background: transparent; position: relative;"><img alt="" class="IMAGE block w-full aspect-video rounded-lg object-cover bg-slate-100 _editable-img_xd76s_47"></div><div class="absolute px-6 inset-x-0 bottom-5 hidden py-5 text-center text-white/90 md:block"><h1 class="TITLE-PRIMARY text-4xl font-bold mb-3"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E5%8F%8B%E6%83%85%E5%B2%81%E6%9C%88" class="editable-text _editable_1fy6y_44">友情岁月</div></span></h1><p class="DESC"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%88%91%E4%BB%AC%E4%B8%80%E8%B5%B7%E7%BB%8F%E5%8E%86%E7%9A%84%E7%82%B9%E7%82%B9%E6%BB%B4%E6%BB%B4%E3%80%82" class="editable-text _editable_1fy6y_44">我们一起经历的点点滴滴。</div></span></p></div></div></div></div><button type="button" data-element-type="button" class="BTN-SECONDARY absolute bottom-0 left-0 top-0 z-10 flex w-1/6 items-center justify-center bg-none p-0 text-center text-white/90 opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-xl text-white/90 _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left" class="svg-inline--fa fa-chevron-left " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"></path></svg></div></span><span class="sr-only"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E4%B8%8A%E4%B8%80%E5%BC%A0" class="editable-text _editable_1fy6y_44">上一张</div></span></span></button><button type="button" data-element-type="button" class="BTN-SECONDARY absolute bottom-0 right-0 top-0 z-10 flex w-1/6 items-center justify-center bg-none p-0 text-center text-white/90 opacity-50 transition-opacity duration-150 ease-in-out hover:opacity-90 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-xl text-white/90 _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right" class="svg-inline--fa fa-chevron-right " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path fill="currentColor" d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path></svg></div></span><span class="sr-only"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E4%B8%8B%E4%B8%80%E5%BC%A0" class="editable-text _editable_1fy6y_44">下一张</div></span></span></button></div></div></div><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="9sFaU-bNHu59S3KoFdJK6" data-type="block" style="width: 100%;"><section class="py-12 bg-white sm:py-16 lg:py-20 dark:bg-slate-800"><div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8"><div class="text-center"><h2 class="TITLE-PRIMARY text-4xl font-semibold text-slate-900 sm:text-4xl xl:text-5xl font-pj dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%8F%AD%E7%BA%A7%E7%9B%B8%E5%85%B3%E9%93%BE%E6%8E%A5" class="editable-text _editable_1fy6y_44">班级相关链接</div></span></h2><p class="DESC mt-4 text-base leading-7 text-slate-600 sm:mt-8 font-pj dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%8E%A2%E7%B4%A2%E6%9B%B4%E5%A4%9A%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC%E7%8F%AD%E7%BA%A7%E7%9A%84%E4%BF%A1%E6%81%AF%E5%92%8C%E8%B5%84%E6%BA%90%E3%80%82" class="editable-text _editable_1fy6y_44">探索更多关于我们班级的信息和资源。</div></span></p></div><div class="grid grid-cols-1 mt-10 text-center sm:mt-16 sm:grid-cols-2 sm:gap-x-12 gap-y-12 md:grid-cols-3 md:gap-0 xl:mt-24"><div><div class="md:p-8 lg:p-14 h-full  "><span><div data-element-type="icon" class="mx-auto text-sky-500 text-3xl _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="link" class="svg-inline--fa fa-link " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M579.8 267.7c56.5-56.5 56.5-148 0-204.5c-50-50-128.8-56.5-186.3-15.4l-1.6 1.1c-14.4 10.3-17.7 30.3-7.4 44.6s30.3 17.7 44.6 7.4l1.6-1.1c32.1-22.9 76-19.3 103.8 8.6c31.5 31.5 31.5 82.5 0 114L422.3 334.8c-31.5 31.5-82.5 31.5-114 0c-27.9-27.9-31.5-71.8-8.6-103.8l1.1-1.6c10.3-14.4 6.9-34.4-7.4-44.6s-34.4-6.9-44.6 7.4l-1.1 1.6C206.5 251.2 213 330 263 380c56.5 56.5 148 56.5 204.5 0L579.8 267.7zM60.2 244.3c-56.5 56.5-56.5 148 0 204.5c50 50 128.8 56.5 186.3 15.4l1.6-1.1c14.4-10.3 17.7-30.3 7.4-44.6s-30.3-17.7-44.6-7.4l-1.6 1.1c-32.1 22.9-76 19.3-103.8-8.6C74 372 74 321 105.5 289.5L217.7 177.2c31.5-31.5 82.5-31.5 114 0c27.9 27.9 31.5 71.8 8.6 103.9l-1.1 1.6c-10.3 14.4-6.9 34.4 7.4 44.6s34.4 6.9 44.6-7.4l1.1-1.6C433.5 260.8 427 182 377 132c-56.5-56.5-148-56.5-204.5 0L60.2 244.3z"></path></svg></div></span><h3 class="TITLE-SECONDARY mt-12 text-xl font-bold text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%8F%AD%E7%BA%A7%E4%B8%BB%E9%A1%B5" class="editable-text _editable_1fy6y_44">班级主页</div></span></h3><p class="TEXT-CONTENT mt-5 text-base text-slate-600 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E8%AE%BF%E9%97%AE%E6%88%91%E4%BB%AC%E7%9A%84%E7%8F%AD%E7%BA%A7%E4%B8%BB%E9%A1%B5%EF%BC%8C%E4%BA%86%E8%A7%A3%E6%9C%80%E6%96%B0%E5%8A%A8%E6%80%81%E3%80%82" class="editable-text _editable_1fy6y_44">访问我们的班级主页，了解最新动态。</div></span></p></div></div><div><div class="md:p-8 lg:p-14 h-full md:border-l border-black/10 dark:border-white/10 "><span><div data-element-type="icon" class="mx-auto text-sky-500 text-3xl _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="users" class="svg-inline--fa fa-users " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM224 224a96 96 0 1 1 192 0 96 96 0 1 1 -192 0zM128 485.3C128 411.7 187.7 352 261.3 352H378.7C452.3 352 512 411.7 512 485.3c0 14.7-11.9 26.7-26.7 26.7H154.7c-14.7 0-26.7-11.9-26.7-26.7z"></path></svg></div></span><h3 class="TITLE-SECONDARY mt-12 text-xl font-bold text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=QQ%E7%BE%A4" class="editable-text _editable_1fy6y_44">QQ群</div></span></h3><p class="TEXT-CONTENT mt-5 text-base text-slate-600 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC%E7%9A%84QQ%E7%BE%A4%EF%BC%8C%E4%B8%8E%E5%90%8C%E5%AD%A6%E4%BB%AC%E4%BF%9D%E6%8C%81%E8%81%94%E7%B3%BB%E3%80%82" class="editable-text _editable_1fy6y_44">加入我们的QQ群，与同学们保持联系。</div></span></p></div></div><div><div class="md:p-8 lg:p-14 h-full md:border-l border-black/10 dark:border-white/10 "><span><div data-element-type="icon" class="mx-auto text-sky-500 text-3xl _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="envelope" class="svg-inline--fa fa-envelope " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"></path></svg></div></span><h3 class="TITLE-SECONDARY mt-12 text-xl font-bold text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E7%AB%99%E9%95%BF%E8%81%94%E7%B3%BB%E6%96%B9%E5%BC%8F" class="editable-text _editable_1fy6y_44">站长联系方式</div></span></h3><p class="TEXT-CONTENT mt-5 text-base text-slate-600 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E5%A6%82%E6%9C%89%E4%BB%BB%E4%BD%95%E9%97%AE%E9%A2%98%EF%BC%8C%E8%AF%B7%E8%81%94%E7%B3%BB%E7%AB%99%E9%95%BF%E3%80%82" class="editable-text _editable_1fy6y_44">如有任何问题，请联系站长。</div></span></p></div></div></div></div></section><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="VvuPiDkCZZNa6Luz_V-Of" data-type="block" style="width: 100%;"><div class="bg-white dark:bg-slate-800 py-16 sm:py-20 w-full"><div class="mx-auto max-w-7xl px-6 lg:px-8"><div class="mx-auto max-w-2xl lg:mx-0"><h2 class="TITLE-PRIMARY text-3xl font-bold tracking-tight text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC" class="editable-text _editable_1fy6y_44">联系我们</div></span></h2><p class="DESC mt-6 text-lg leading-8 text-slate-700 dark:text-white/80"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E6%9C%89%E4%BB%BB%E4%BD%95%E9%97%AE%E9%A2%98%E6%88%96%E5%BB%BA%E8%AE%AE%EF%BC%8C%E6%AC%A2%E8%BF%8E%E8%81%94%E7%B3%BB%E6%88%91%E4%BB%AC%E3%80%82" class="editable-text _editable_1fy6y_44">有任何问题或建议，欢迎联系我们。</div></span></p></div><div class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-8 text-base leading-7 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4"><div><div><h3 class="TITLE-SECONDARY border-l border-black/10 dark:border-white/10 pl-6 font-semibold text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=QQ%E7%BE%A4" class="editable-text _editable_1fy6y_44">QQ群</div></span></h3><address class="DESC border-l border-black/10 dark:border-white/10 pl-6 pt-2 not-italic text-slate-600 dark:text-white/80"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=123456789" class="editable-text _editable_1fy6y_44">123456789</div></span></address></div></div><div><div><h3 class="TITLE-SECONDARY border-l border-black/10 dark:border-white/10 pl-6 font-semibold text-slate-900 dark:text-white/90"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%E9%82%AE%E7%AE%B1" class="editable-text _editable_1fy6y_44">邮箱</div></span></h3><address class="DESC border-l border-black/10 dark:border-white/10 pl-6 pt-2 not-italic text-slate-600 dark:text-white/80"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=admin%40xinglan.com" class="editable-text _editable_1fy6y_44">admin@xinglan.com</div></span></address></div></div></div></div></div><button id="add-section-btn" class="_add-section-button_kvx2v_44 _add-section-disappear_kvx2v_84"><span class="_content_kvx2v_59"><svg width="1em" height="1em" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" class="_add-icon_kvx2v_81"><g clip-path="url(#clip0_287_302)"><mask id="mask0_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask0_287_302)"><mask id="mask1_287_302" maskUnits="userSpaceOnUse" x="0" y="0" width="16" height="16" style="mask-type: luminance;"><path d="M16 0H0V16H16V0Z" fill="white"></path></mask><g mask="url(#mask1_287_302)"><path d="M2.49998 8.9001H13.5C13.9971 8.9001 14.4 8.49716 14.4 8.0001C14.4 7.50304 13.9971 7.1001 13.5 7.1001H2.49998C2.00292 7.1001 1.59998 7.50304 1.59998 8.0001C1.59998 8.49716 2.00292 8.9001 2.49998 8.9001Z" fill="currentColor"></path><path d="M7.09998 2.5001V13.5001C7.09998 13.9972 7.50292 14.4001 7.99998 14.4001C8.49704 14.4001 8.89998 13.9972 8.89998 13.5001V2.5001C8.89998 2.00304 8.49704 1.6001 7.99998 1.6001C7.50292 1.6001 7.09998 2.00304 7.09998 2.5001Z" fill="currentColor"></path></g></g></g><defs><clipPath id="clip0_287_302"><rect width="16" height="16" fill="white"></rect></clipPath></defs></svg>Add Section</span></button><div class="_line_kvx2v_87"></div><div style="height: 0px; opacity: 0;"><div class="_new-section-block_kvx2v_106" style="pointer-events: none;">New Section</div></div></div><div class="_block-container_1jg5m_44" id="block-container" data-id="cyR5U8ccJsDCkkueVhleG" data-type="footer" style="width: 100%;"><section class="bg-slate-50 dark:bg-slate-800 px-6 py-20 md:px-8"><div><div class=" mx-auto max-w-7xl flex flex-col gap-20"><div class="flex flex-col items-center gap-8 md:justify-between md:flex-row"><ul class="flex items-center gap-8"><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=index&amp;target=_blank&amp;text=%E9%A6%96%E9%A1%B5" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">首页</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=announcements&amp;target=_blank&amp;text=%E5%85%AC%E5%91%8A%E6%A0%8F" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">公告栏</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=dreamland&amp;target=_blank&amp;text=%E8%B5%B7%E6%A2%A6%E5%9B%AD" class="editable-text _editable_1fy6y_44 _cursor-pointer_1fy6y_48">起梦园</div></span></button></li><li><button data-element-type="button" class="TEXT-LINK font-semibold text-slate-900 dark:text-slate-50  hover:text-sky-400  dark:hover:text-sky-400 focus:text-sky-500 dark:focus:text-sky-500 _button-wrap_zzc5c_44"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=" class="editable-text _editable_1fy6y_44"></div></span></button></li></ul><ul class="flex items-center gap-8 "><li href="https://qq.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="qq" class="svg-inline--fa fa-qq " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M433.754 420.445c-11.526 1.393-44.86-52.741-44.86-52.741 0 31.345-16.136 72.247-51.051 101.786 16.842 5.192 54.843 19.167 45.803 34.421-7.316 12.343-125.51 7.881-159.632 4.037-34.122 3.844-152.316 8.306-159.632-4.037-9.045-15.25 28.918-29.214 45.783-34.415-34.92-29.539-51.059-70.445-51.059-101.792 0 0-33.334 54.134-44.859 52.741-5.37-.65-12.424-29.644 9.347-99.704 10.261-33.024 21.995-60.478 40.144-105.779C60.683 98.063 108.982.006 224 0c113.737.006 163.156 96.133 160.264 214.963 18.118 45.223 29.912 72.85 40.144 105.778 21.768 70.06 14.716 99.053 9.346 99.704z"></path></svg></div></span></button></li><li href="https://wechat.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"></div></span></button></li><li href="https://weibo.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="weibo" class="svg-inline--fa fa-weibo " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M407 177.6c7.6-24-13.4-46.8-37.4-41.7-22 4.8-28.8-28.1-7.1-32.8 50.1-10.9 92.3 37.1 76.5 84.8-6.8 21.2-38.8 10.8-32-10.3zM214.8 446.7C108.5 446.7 0 395.3 0 310.4c0-44.3 28-95.4 76.3-143.7C176 67 279.5 65.8 249.9 161c-4 13.1 12.3 5.7 12.3 6 79.5-33.6 140.5-16.8 114 51.4-3.7 9.4 1.1 10.9 8.3 13.1 135.7 42.3 34.8 215.2-169.7 215.2zm143.7-146.3c-5.4-55.7-78.5-94-163.4-85.7-84.8 8.6-148.8 60.3-143.4 116s78.5 94 163.4 85.7c84.8-8.6 148.8-60.3 143.4-116zM347.9 35.1c-25.9 5.6-16.8 43.7 8.3 38.3 72.3-15.2 134.8 52.8 111.7 124-7.4 24.2 29.1 37 37.4 12 31.9-99.8-55.1-195.9-157.4-174.3zm-78.5 311c-17.1 38.8-66.8 60-109.1 46.3-40.8-13.1-58-53.4-40.3-89.7 17.7-35.4 63.1-55.4 103.4-45.1 42 10.8 63.1 50.2 46 88.5zm-86.3-30c-12.9-5.4-30 .3-38 12.9-8.3 12.9-4.3 28 8.6 34 13.1 6 30.8.3 39.1-12.9 8-13.1 3.7-28.3-9.7-34zm32.6-13.4c-5.1-1.7-11.4.6-14.3 5.4-2.9 5.1-1.4 10.6 3.7 12.9 5.1 2 11.7-.3 14.6-5.4 2.8-5.2 1.1-10.9-4-12.9z"></path></svg></div></span></button></li><li href="https://github.com"><button data-element-type="button" class="TEXT-LINK text-slate-900 dark:text-slate-50 hover:text-sky-400 dark:hover:text-sky-400  dark:focus:text-slate-500 _button-wrap_zzc5c_44"><span><div data-element-type="icon" class="text-lg _icon-wrapper_fcocz_44" data-library="FontAwesome" data-link="link=&amp;target=_blank" style="position: relative;"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="github" class="svg-inline--fa fa-github " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg></div></span></button></li></ul></div><p class="w-full text-sm text-center text-slate-600 lg:mt-0 dark:text-slate-400"><span><div data-element-type="text" data-link="link=&amp;target=_blank&amp;text=%C2%A9%20%E6%98%9F%E6%BE%9C%202023%EF%BC%8C%E7%89%88%E6%9D%83%E6%89%80%E6%9C%89" class="editable-text _editable_1fy6y_44">© 星澜 2023，版权所有</div></span></p></div></div></section></div>
     </div>
-  </header>
-
-  <main class="main">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero section">
-      <div class="hero-bg">
-        <img src="assets/img/hero-bg-light.webp" alt="">
-      </div>
-      <div class="container text-center">
-        <div class="d-flex flex-column justify-content-center align-items-center">
-          <h1 data-aos="fade-up" class="">Welcome to <span>QuickStart</span></h1>
-          <p data-aos="fade-up" data-aos-delay="100" class="">Quickly start your project now and set the stage for success<br></p>
-          <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Get Started</a>
-            <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
-          </div>
-          <img src="assets/img/hero-services-img.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
-        </div>
-      </div>
-
-    </section><!-- /Hero Section -->
-
-    <!-- Featured Services Section -->
-    <section id="featured-services" class="featured-services section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Lorem Ipsum</a></h4>
-                <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
-              </div>
-            </div>
-          </div>
-          <!-- End Service Item -->
-
-          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-card-checklist"></i></div>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Dolor Sitema</a></h4>
-                <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip exa</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-xl-4 col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item d-flex">
-              <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-              <div>
-                <h4 class="title"><a href="#" class="stretched-link">Sed ut perspiciatis</a></h4>
-                <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum</p>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Featured Services Section -->
-
-    <!-- About Section -->
-    <section id="about" class="about section">
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="100">
-            <p class="who-we-are">Who We Are</p>
-            <h3>Unleashing Potential with Creative Strategy</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Duis aute irure dolor in reprehenderit in voluptate velit.</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-            </ul>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
-          </div>
-
-          <div class="col-lg-6 about-images" data-aos="fade-up" data-aos-delay="200">
-            <div class="row gy-4">
-              <div class="col-lg-6">
-                <img src="assets/img/about-company-1.jpg" class="img-fluid" alt="">
-              </div>
-              <div class="col-lg-6">
-                <div class="row gy-4">
-                  <div class="col-lg-12">
-                    <img src="assets/img/about-company-2.jpg" class="img-fluid" alt="">
-                  </div>
-                  <div class="col-lg-12">
-                    <img src="assets/img/about-company-3.jpg" class="img-fluid" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- /About Section -->
-
-    <!-- Clients Section -->
-    <section id="clients" class="clients section">
-
-      <div class="container" data-aos="fade-up">
-
-        <div class="row gy-4">
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-1.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-2.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-3.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-4.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-5.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-          <div class="col-xl-2 col-md-3 col-6 client-logo">
-            <img src="assets/img/clients/client-6.png" class="img-fluid" alt="">
-          </div><!-- End Client Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Clients Section -->
-
-    <!-- Features Section -->
-    <section id="features" class="features section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2 class="">Features</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-        <div class="row justify-content-between">
-
-          <div class="col-lg-5 d-flex align-items-center">
-
-            <ul class="nav nav-tabs" data-aos="fade-up" data-aos-delay="100">
-              <li class="nav-item">
-                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
-                  <i class="bi bi-binoculars"></i>
-                  <div>
-                    <h4 class="d-none d-lg-block">Modi sit est dela pireda nest</h4>
-                    <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
-                  <i class="bi bi-box-seam"></i>
-                  <div>
-                    <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
-                    <p>
-                      Recusandae atque nihil. Delectus vitae non similique magnam molestiae sapiente similique
-                      tenetur aut voluptates sed voluptas ipsum voluptas
-                    </p>
-                  </div>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
-                  <i class="bi bi-brightness-high"></i>
-                  <div>
-                    <h4 class="d-none d-lg-block">Pariatur explica nitro dela</h4>
-                    <p>
-                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-                      Debitis nulla est maxime voluptas dolor aut
-                    </p>
-                  </div>
-                </a>
-              </li>
-            </ul><!-- End Tab Nav -->
-
-          </div>
-
-          <div class="col-lg-6">
-
-            <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-              <div class="tab-pane fade active show" id="features-tab-1">
-                <img src="assets/img/tabs-1.jpg" alt="" class="img-fluid">
-              </div><!-- End Tab Content Item -->
-
-              <div class="tab-pane fade" id="features-tab-2">
-                <img src="assets/img/tabs-2.jpg" alt="" class="img-fluid">
-              </div><!-- End Tab Content Item -->
-
-              <div class="tab-pane fade" id="features-tab-3">
-                <img src="assets/img/tabs-3.jpg" alt="" class="img-fluid">
-              </div><!-- End Tab Content Item -->
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /Features Section -->
-
-    <!-- Features Details Section -->
-    <section id="features-details" class="features-details section">
-
-      <div class="container">
-
-        <div class="row gy-4 justify-content-between features-item">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <img src="assets/img/features-1.jpg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-5 d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
-            <div class="content">
-              <h3>Corporis temporibus maiores provident</h3>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-              </p>
-              <a href="#" class="btn more-btn">Learn More</a>
-            </div>
-          </div>
-
-        </div><!-- Features Item -->
-
-        <div class="row gy-4 justify-content-between features-item">
-
-          <div class="col-lg-5 d-flex align-items-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="content">
-              <h3>Neque ipsum omnis sapiente quod quia dicta</h3>
-              <p>
-                Quidem qui dolore incidunt aut. In assumenda harum id iusto lorena plasico mares
-              </p>
-              <ul>
-                <li><i class="bi bi-easel flex-shrink-0"></i> Et corporis ea eveniet ducimus.</li>
-                <li><i class="bi bi-patch-check flex-shrink-0"></i> Exercitationem dolorem sapiente.</li>
-                <li><i class="bi bi-brightness-high flex-shrink-0"></i> Veniam quia modi magnam.</li>
-              </ul>
-              <p></p>
-              <a href="#" class="btn more-btn">Learn More</a>
-            </div>
-
-          </div>
-
-          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/features-2.jpg" class="img-fluid" alt="">
-          </div>
-
-        </div><!-- Features Item -->
-
-      </div>
-
-    </section><!-- /Features Details Section -->
-
-    <!-- Services Section -->
-    <section id="services" class="services section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Services</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row g-5">
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="service-item item-cyan position-relative">
-              <i class="bi bi-activity icon"></i>
-              <div>
-                <h3>Nesciunt Mete</h3>
-                <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-item item-orange position-relative">
-              <i class="bi bi-broadcast icon"></i>
-              <div>
-                <h3>Eosle Commodi</h3>
-                <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="service-item item-teal position-relative">
-              <i class="bi bi-easel icon"></i>
-              <div>
-                <h3>Ledo Markt</h3>
-                <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="service-item item-red position-relative">
-              <i class="bi bi-bounding-box-circles icon"></i>
-              <div>
-                <h3>Asperiores Commodi</h3>
-                <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="500">
-            <div class="service-item item-indigo position-relative">
-              <i class="bi bi-calendar4-week icon"></i>
-              <div>
-                <h3>Velit Doloremque.</h3>
-                <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="600">
-            <div class="service-item item-pink position-relative">
-              <i class="bi bi-chat-square-text icon"></i>
-              <div>
-                <h3>Dolori Architecto</h3>
-                <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
-                <a href="service-details.html" class="read-more stretched-link">Learn More <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div><!-- End Service Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Services Section -->
-
-    <!-- More Features Section -->
-    <section id="more-features" class="more-features section">
-
-      <div class="container">
-
-        <div class="row justify-content-around gy-4">
-
-          <div class="col-lg-6 d-flex flex-column justify-content-center order-2 order-lg-1" data-aos="fade-up" data-aos-delay="100">
-            <h3>Enim quis est voluptatibus aliquid consequatur</h3>
-            <p>Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi</p>
-
-            <div class="row">
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-easel flex-shrink-0"></i>
-                <div>
-                  <h4>Lorem Ipsum</h4>
-                  <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias </p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-patch-check flex-shrink-0"></i>
-                <div>
-                  <h4>Nemo Enim</h4>
-                  <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiise</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-brightness-high flex-shrink-0"></i>
-                <div>
-                  <h4>Dine Pad</h4>
-                  <p>Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-              <div class="col-lg-6 icon-box d-flex">
-                <i class="bi bi-brightness-high flex-shrink-0"></i>
-                <div>
-                  <h4>Tride clov</h4>
-                  <p>Est voluptatem labore deleniti quis a delectus et. Saepe dolorem libero sit</p>
-                </div>
-              </div><!-- End Icon Box -->
-
-            </div>
-
-          </div>
-
-          <div class="features-image col-lg-5 order-1 order-lg-2" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/features-3.jpg" alt="">
-          </div>
-
-        </div>
-
-      </div>
-
-    </section><!-- /More Features Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free Plan</h3>
-              <p class="description">Ullam mollitia quasi nobis soluta in voluptatum et sint palora dex strater</p>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <a href="#" class="cta-btn">Start a free trial</a>
-              <p class="text-center small">No credit card required</p>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Voluptate id voluptas qui sed aperiam rerum</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Iure nihil dolores recusandae odit voluptatibus</span></li>
-              </ul>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="200">
-            <div class="pricing-item featured">
-              <p class="popular">Popular</p>
-              <h3>Business Plan</h3>
-              <p class="description">Ullam mollitia quasi nobis soluta in voluptatum et sint palora dex strater</p>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <a href="#" class="cta-btn">Start a free trial</a>
-              <p class="text-center small">No credit card required</p>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                <li><i class="bi bi-check"></i> <span>Voluptate id voluptas qui sed aperiam rerum</span></li>
-                <li class="na"><i class="bi bi-x"></i> <span>Iure nihil dolores recusandae odit voluptatibus</span></li>
-              </ul>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="300">
-            <div class="pricing-item">
-              <h3>Developer Plan</h3>
-              <p class="description">Ullam mollitia quasi nobis soluta in voluptatum et sint palora dex strater</p>
-              <h4><sup>$</sup>49<span> / month</span></h4>
-              <a href="#" class="cta-btn">Start a free trial</a>
-              <p class="text-center small">No credit card required</p>
-              <ul>
-                <li><i class="bi bi-check"></i> <span>Quam adipiscing vitae proin</span></li>
-                <li><i class="bi bi-check"></i> <span>Nec feugiat nisl pretium</span></li>
-                <li><i class="bi bi-check"></i> <span>Nulla at volutpat diam uteera</span></li>
-                <li><i class="bi bi-check"></i> <span>Pharetra massa massa ultricies</span></li>
-                <li><i class="bi bi-check"></i> <span>Massa ultricies mi quis hendrerit</span></li>
-                <li><i class="bi bi-check"></i> <span>Voluptate id voluptas qui sed aperiam rerum</span></li>
-                <li><i class="bi bi-check"></i> <span>Iure nihil dolores recusandae odit voluptatibus</span></li>
-              </ul>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Pricing Section -->
-
-    <!-- Faq Section -->
-    <section id="faq" class="faq section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Frequently Asked Questions</h2>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row justify-content-center">
-
-          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
-
-            <div class="faq-container">
-
-              <div class="faq-item faq-active">
-                <h3>Non consectetur a erat nam at lectus urna duis?</h3>
-                <div class="faq-content">
-                  <p>Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Feugiat scelerisque varius morbi enim nunc faucibus?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Dolor sit amet consectetur adipiscing elit pellentesque?</h3>
-                <div class="faq-content">
-                  <p>Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla?</h3>
-                <div class="faq-content">
-                  <p>Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Tempus quam pellentesque nec nam aliquam sem et tortor?</h3>
-                <div class="faq-content">
-                  <p>Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-              <div class="faq-item">
-                <h3>Perspiciatis quod quo quos nulla quo illum ullam?</h3>
-                <div class="faq-content">
-                  <p>Enim ea facilis quaerat voluptas quidem et dolorem. Quis et consequatur non sed in suscipit sequi. Distinctio ipsam dolore et.</p>
-                </div>
-                <i class="faq-toggle bi bi-chevron-right"></i>
-              </div><!-- End Faq item-->
-
-            </div>
-
-          </div><!-- End Faq Column-->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Faq Section -->
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 1,
-                  "spaceBetween": 40
-                },
-                "1200": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 1
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-                  <h3>Saul Goodman</h3>
-                  <h4>Ceo &amp; Founder</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-                  <h3>Sara Wilsson</h3>
-                  <h4>Designer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-                  <h3>Jena Karlis</h3>
-                  <h4>Store Owner</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-                  <h3>Matt Brandon</h3>
-                  <h4>Freelancer</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item">
-                <div class="stars">
-                  <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                </div>
-                <p>
-                  Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                </p>
-                <div class="profile mt-auto">
-                  <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-                  <h3>John Larson</h3>
-                  <h4>Entrepreneur</h4>
-                </div>
-              </div>
-            </div><!-- End testimonial item -->
-
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-
-      </div>
-
-    </section><!-- /Testimonials Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>联系方式</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
-            
-              <i class="bi bi-geo-alt"></i>
-              <h3>Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
-            </div>
-          </div><!-- End Info Item -->
-
-              <i class="bi bi-telephone"></i>
-              <h3>电话</h3>
-              <p>+86 15797687826</p>
-            </div>
-          </div><!-- End Info Item -->
-
-          <div class="col-lg-3 col-md-6">
-            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
-              <i class="bi bi-envelope"></i>
-              <h3>邮箱</h3>
-              <p>contact@hanson.us.kg</p>
-            </div>
-          </div><!-- End Info Item -->
-
-        </div>
-
-          <div class="col-lg-6">
-            <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
-              <div class="row gy-4">
-
-                <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                </div>
-
-                <div class="col-md-6 ">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
-                </div>
-
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
-                </div>
-
-                <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
-                </div>
-
-              </div>
-            </form>
-          </div><!-- End Contact Form -->
-
-        </div>
-
-      </div>
-
-    </section><!-- /Contact Section -->
-
-  </main>
-
-  <footer id="footer" class="footer position-relative">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">星澜</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p class="mt-3"><strong>Phone:</strong> <span>+86 15797687826</span></p>
-            <p><strong>Email:</strong> <span>contact@hanson.us.kg</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter-x"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
-            <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-12 footer-newsletter">
-          <h4>Our Newsletter</h4>
-          <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-          <form action="forms/newsletter.php" method="post" class="php-email-form">
-            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-          </form>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">QuickStart</strong><span>All Rights Reserved</span></p>
-      <div class="credits"><a target="_blank" href="http://www.mobanwang.com/" title="网页模板">网页模板</a>
-      </div>
-    </div>
-
-  </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+  </div>
+
+
+  <script src="/static/js/fontawesom@6.5.1.js" async></script>
+
+  <script src="/static/js/tailwindcss@3.3.5.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          textColor: {
+            slate: {
+              50: '#f8fafc',
+              100: '#f1f5f9',
+              200: '#e2e8f0',
+              300: '#cbd5e1',
+              400: '#94a3b8',
+              500: '#64748b',
+              600: '#475569',
+              700: '#334155',
+              800: '#1e293b',
+              900: '#0f172a',
+              950: '#020617',
+            },
+            gray: {
+              50: '#f9fafb',
+              100: '#f3f4f6',
+              200: '#e5e7eb',
+              300: '#d1d5db',
+              400: '#9ca3af',
+              500: '#6b7280',
+              600: '#4b5563',
+              700: '#374151',
+              800: '#1f2937',
+              900: '#111827',
+              950: '#030712',
+            },
+          },
+          colors: {
+            inherit: 'inherit',
+            current: 'currentColor',
+            transparent: 'transparent',
+            black: '#000',
+            white: '#fff',
+            slate: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            gray: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            zinc: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            neutral: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            stone: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            red: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            orange: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            amber: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            yellow: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            lime: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            green: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            emerald: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            teal: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            cyan: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            sky: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            blue: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            indigo: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            violet: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            purple: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            fuchsia: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            pink: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+            rose: {
+              50: 'var(--ai-create-color-theme-50)',
+              100: 'var(--ai-create-color-theme-100)',
+              200: 'var(--ai-create-color-theme-200)',
+              300: 'var(--ai-create-color-theme-300)',
+              400: 'var(--ai-create-color-theme-400)',
+              500: 'var(--ai-create-color-theme-500)',
+              600: 'var(--ai-create-color-theme-600)',
+              700: 'var(--ai-create-color-theme-700)',
+              800: 'var(--ai-create-color-theme-800)',
+              900: 'var(--ai-create-color-theme-900)',
+              950: 'var(--ai-create-color-theme-950)',
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <script type="module" src="https://js-design-aibuild.s3.us-west-2.amazonaws.com/assets/onepage/thread/js/1831357362574462978/1725465141925.js?X-Amz-Security-Token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDVluWftcbUbNwTE7R5rsmHLepZALGtCGkYSH9lAFCGuwIgYFpNQ3QVKdb2BYbsvL6acqpDCUad8XisLlV0Y4X0lzkqwwUI7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw5NDc1NTkwMjk0NDYiDCZFyWcYYpFztIVj3yqXBYe2A6X38FVMdoa7rn5jiydCO25ATkAERZYGS8dDuk7%2FECkoRG8pLpr7B9fLpxd4CLyCc7lbSgzJydrHBhiONr%2FLccCGeb3iHfGilM%2FSOXyvClLAMpJQyCDk9qG%2FbLtI3i9Bv%2FX4AaM7n8OJc2318QIXv1hII5k5SIlAcnkq%2B05Z8yueO5GADRq%2FWgSey4ESRl1cmH0c0pbrdmZ%2BB3rAks5XKhWzhs3zJ%2F2tlRdpMZedwdlTf%2FmWRuS2JpISC0I4ZmOIYHxxnRM9OXc%2FHIhV9fAXaMYSiGl753OAHs5es6%2B8JGkmH7iJkwuau1ujI%2BwEcEQiITUMOUo9feT4iix3hV96kXW1%2BXParM36I%2Bt2sMA9GY7PfZEQQuabFxxo2VhhmgRCSIlfvuqQ09Lkw69ee69rk03pTdoKrDU4gWZrSTW8G8QQccI065lCZNuNPe%2FwGko16bpCEbakgOa9Z92ejhOxnM8bGfxp51IlHsmVLiruY%2BTjZeb8Sdrao2JrDy9EvczyJ1pFWN1ODIevjH16KSRpwBoRQnVUnNg1PWkcDL1zmfu4H70hPBsjOP%2BddEjYmR%2B9nruMOOceZCS20tK0Sd%2FcHfLE1QIFcB0Hm5ey5L3YNAWQ%2BeiUjc%2FmpebiWK2rf0zPAqPou3vCs%2BnL5AP42mm2rxzoLEbaZbWEzIrysjCHR98unMOdopaxmVlKeDr2NG0%2FiUhAyV9af3F9YfhueC5siIT8aAjknQQqA7KtJSaAvv8OkxtWGWTB4zJJ2WTDTga56t3d8EvGsUF9b1cOAGna%2B%2B6D%2B4sjjvK5h4SlYYBgK95f%2FIiYIT5aKxSNb%2FGxA%2BvdXAgb1MEW48OlowZAYLyvkCH7bBL%2BNJgZbhfpWMEpMwgwwgHOrDD54Oa2BjqxAY30VBcf1DfMxY8c2AIXenp8EciqyJluBfLQcIhCTpqFb7KaKMRJzClEOIWGJ17tkfpdgS6MzTSG6E%2FdqqdLPmc6x5FLjRAFWTANFzldj5hsvH5%2FvMjj0VFUdReEcaDgO1DP4cwpTYOkR%2BQA1u0ipuBBswqZmt%2BE6ORZpnQRO4A8xDweLUc95YACtpXwIe5jfBVmZWoJDgEFmUPA2Mb7Pr7j%2FytbpOPdF74lntaT0DhK3A%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240905T150151Z&X-Amz-SignedHeaders=host&X-Amz-Expires=900&X-Amz-Credential=ASIA5ZHXLLLDEDUDKAJA%2F20240905%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Signature=4a2e9b69da0759098407cb640357d05868709849910fc8b970180fb40cf4cc31"></script>
+
+
+  <!-- badge start-->
+  <a class="wegic-badge" id="wegic-badge" href="https://wegic.ai/?source=bandage" target="_blank">
+    <img src="/static/logo.svg" />
+    Made in Wegic
+  </a>
+  <!-- badge end-->
+
+  <!-- Google tag start -->
+  
+  <!-- Google tag end -->
+
+  
 </body>
 
 </html>
